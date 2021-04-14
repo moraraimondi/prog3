@@ -1,21 +1,21 @@
-import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <body>
-      <header>
-
+      <header className="header">
+        <Header/>
       </header>
 
       <div className="container">
 
-        <div className="left-section" style="width: 1/3;">
+        <div className="left-section">
           <div className="formulario-filtros">
-
+            Hola
           </div>
         </div>
 
-        <div className="right-section" style="width 2/3;">
+        <div className="right-section">
           <div className="tarjetas-container">
             Aca van las tarjetas
           </div>
