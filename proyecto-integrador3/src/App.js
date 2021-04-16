@@ -4,8 +4,17 @@ import React, {Component} from "react";
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: []
+    };
+  }
+
   componentDidMount() {
-    fetch("https://randomuser.me/api/?inc=name,login&results=12")  
+    fetch("https://randomuser.me/api/?results=12")  
     .then(res => 
       res.json())
       .then(

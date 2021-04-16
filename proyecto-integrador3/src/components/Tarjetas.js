@@ -1,21 +1,15 @@
 import React, {Component} from "react";
 
 class Tarjetas extends Component {
-     constructor(){
-         super();
-         this.state = {
-             // color: this.props.color
-         }
-     }
 
-    //  CambiarColor = (nuevoColor) => {
-    //      console.log(nuevoColor);
-    //     if(this.state.color == this.state.colorOriginal)
-    //         this.setState({color : nuevoColor});
-    //     else 
-    //         this.setState({ color: this.state.colorOriginal})
-    //  };
-
+    constructor(props) {
+        super(props);
+        this.state = {
+          error: null,
+          isLoaded: false,
+          items: []
+        };
+      };
 
     render() {
         return(
