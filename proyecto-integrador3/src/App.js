@@ -1,16 +1,28 @@
 import Header from './components/Header';
+import Tarjetas from './components/Tarjetas';
 import React, {Component} from "react";
 
 class App extends Component {
 
-  componentDidMount(){
-    fetch("https://randomuser.me/api/?inc=name,login&results=12")
-    .then(resource => resource.json())
-    .then(data => {
-    this.setState({items: data.results});
-         console.log(this.state.items);
-     })
-   }
+  componentDidMount() {
+    fetch("https://randomuser.me/api/?inc=name,login&results=12")  
+    .then(res => 
+      res.json())
+      .then(
+        (data) => {
+          this.setState({
+            isLoaded: true,
+            items: data.results
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
 
 render(){
   return (
@@ -29,7 +41,10 @@ render(){
 
         <div className="right-section">
           <div className="tarjetas-container">
-            Aca van las tarjetas
+            {items.map(item=> (
+              <Tarjetas nombre={item.name.first}/>
+            ))}
+            
           </div>
 
           <div className="controller">
