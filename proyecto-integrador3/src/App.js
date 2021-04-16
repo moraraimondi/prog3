@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Tarjetas from './components/Tarjetas';
+import Footer from './components/Footer';
 import React, {Component} from "react";
 
 class App extends Component {
@@ -70,7 +71,7 @@ render(){
       </div>
 
       <footer>
-
+          <Footer/>
       </footer>
     </body>
     )
