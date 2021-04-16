@@ -19,6 +19,8 @@ class App extends Component {
       res.json())
       .then(
         (data) => {
+        console.log(data);
+
           this.setState({
             isLoaded: true,
             items: data.results
@@ -34,8 +36,12 @@ class App extends Component {
   }
 
 render(){
-  return (
-    <body>
+  const {error, isLoaded, items} = this.state;
+  if(error){
+    return <div> Error: {error.message}</div>;
+  } else {
+    return (
+      <body>
       <header className="header">
         <Header/>
       </header>
@@ -67,7 +73,8 @@ render(){
 
       </footer>
     </body>
-  );
+    )
+  }
 }
 }
   
