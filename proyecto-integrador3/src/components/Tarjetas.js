@@ -19,7 +19,10 @@ class Tarjetas extends Component {
             >  
                
                <ul className="personajes">
-                   <li>{this.props.nombre}</li>
+                   <li>{this.props.nombre} {this.props.apellido}</li>
+                   <li>{this.props.mail}</li>
+                   <li>{this.props.fecha} ({this.props.edad})</li>
+                   <li><a href="hola">Contacto</a></li>
                </ul>
            </div> 
         )

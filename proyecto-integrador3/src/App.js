@@ -57,7 +57,7 @@ render(){
         <div className="right-section">
           <div className="tarjetas-container">
             {items.map(item=> (
-              <Tarjetas nombre={item.name.first}/>
+              <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} fecha={item.dob.date} edad={item.dob.age}/>
             ))}
             
           </div>
