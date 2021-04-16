@@ -1,15 +1,18 @@
 import Header from './components/Header';
+import React, {Component} from "react";
 
-// componentDidMount() {
-//   fetch("https://randomuser.me/api/?inc=name,login&results=12")
-//   .then(resource => resource.json())
-//   .then(data => {
-//       this.setState({items: data.results});
-//       console.log(this.state.items);
-//   })
-// }; 
+class App extends Component {
 
-function App() {
+  componentDidMount(){
+    fetch("https://randomuser.me/api/?inc=name,login&results=12")
+    .then(resource => resource.json())
+    .then(data => {
+    this.setState({items: data.results});
+         console.log(this.state.items);
+     })
+   }
+
+render(){
   return (
     <body>
       <header className="header">
@@ -42,5 +45,7 @@ function App() {
     </body>
   );
 }
+}
+  
 
 export default App;
