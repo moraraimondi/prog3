@@ -58,11 +58,10 @@ render(){
         <div className="right-section">
           <div className="tarjetas-container">
             {items.map(item=> (
-              <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} fecha={item.dob.date} edad={item.dob.age}/>
+              <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} fecha={item.dob.date} edad={item.dob.age} foto={item.picture.large}/>
             ))}
             
           </div>
-
           <div className="controller">
             Aca van los botones
           </div>

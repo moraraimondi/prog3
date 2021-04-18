@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import TarjetasDetalle from "./TarjetasDetalle";
 
 class Tarjetas extends Component {
 
@@ -19,15 +20,15 @@ class Tarjetas extends Component {
             >  
                
                <ul className="personajes">
+                   <img src= {this.props.foto}/>
                    <li>{this.props.nombre} {this.props.apellido}</li>
                    <li>{this.props.mail}</li>
                    <li>{this.props.fecha} ({this.props.edad})</li>
                    <li><a href="hola">Contacto</a></li>
                </ul>
+               <TarjetasDetalle/>
            </div> 
         )
-    
-           
 
     }
 };
