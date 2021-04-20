@@ -11,7 +11,7 @@ class TarjetasDetalle extends Component{
       };
       render(){
           return(
-              <div>Detalles modal</div>
+              <div></div>
           )
       }
 }

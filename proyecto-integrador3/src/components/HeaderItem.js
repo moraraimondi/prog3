@@ -9,18 +9,20 @@ class HeaderItem extends Component {
         }
     }
 
-    CambiarColor = (nuevoColor) => {
-        if(this.state.color == this.state.colorOriginal)
-            this.setState({ color : nuevoColor});
-        else 
-            this.setState({ color: this.state.colorOriginal})
-    }
+    // CambiarColor = (nuevoColor) => {
+    //     if(this.state.color == this.state.colorOriginal)
+    //         this.setState({ color : nuevoColor});
+    //     else 
+    //         this.setState({ color: this.state.colorOriginal})
+    // }
 
-    CambiarStroke = (nuevoStroke) => {
+    Enfasis = (nuevoStroke, nuevoColor) => {
         if(this.state.stroke === this.state.strokeOriginal)
-            this.setState({ stroke : nuevoStroke});
+            this.setState({ stroke : nuevoStroke,
+                            color: nuevoColor})
         else
-            this.setState({ stroke : this.state.strokeOriginal})
+            this.setState({ stroke : this.state.strokeOriginal,
+                            color: this.state.colorOriginal})
     }
 
     render(){
@@ -33,8 +35,8 @@ class HeaderItem extends Component {
                     color: this.state.color,
                     fontWeight: this.state.stroke,
                 }}
-                onMouseOver={() => this.CambiarStroke('900')}
-                onMouseOut={this.CambiarStroke}
+                onMouseOver={() => this.Enfasis('900', '#424242')}
+                onMouseOut={this.Enfasis}
                 >{this.props.seccion}</a>
             </li>
         )

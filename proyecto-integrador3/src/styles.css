@@ -9,7 +9,7 @@ body{
 
 /*$ HEADER */
 header.header{
-    width: 100vw;
+    width: 100%;
     height: 100px;
     display: flex;
     background: #FFF9F8;
@@ -74,6 +74,106 @@ a.section-a{
     display:flex;
     align-items:center;
     justify-content:center;
-
 }
 
+/* CONTAINER */
+div.container{
+    margin-top: 100px;
+
+    grid-template-columns: 1fr 3fr;
+}
+
+/* Right Section */
+div.right-section{
+    margin-left: 200px;
+}
+
+/* Tarjetas */
+div.tarjetas-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+div.tarjetas{
+    width: 300px;
+    height: auto;
+    padding: 16px;
+
+    filter: drop-shadow(0px 7.6804px 19.7496px rgba(0, 0, 0, 0.05)) drop-shadow(0px 7.32677px 17.1419px rgba(0, 0, 0, 0.0298054)) drop-shadow(0px 2.51707px 19.2999px rgba(0, 0, 0, 0.0201946));
+
+
+    background: #FFF9F8;
+    border-radius: 22px;
+    margin-bottom: 50px;
+}
+
+ul.personajes{
+    list-style: none;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+div.datos-perfil{
+    text-align: center;
+}
+
+/* div.div-fotoPerfil{
+    height: 250px;
+    width: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+img.fotoPerfil{
+    height: 300px;
+    width: 300px;
+
+    border-radius: 20px;
+}
+
+li.nombre-perfil{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+li.mail-perfil{
+    font-weight: 200;
+    font-size: 15px;
+}
+
+div.div-buttons{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+button.button-borrar{
+    padding: 16px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px;
+    
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background: linear-gradient(90deg, #F07D7D 14.53%, rgba(255, 123, 123, 0.97) 88.87%);    
+    border-radius: 16px;
+    border: none;
+}
+
+button.button-info{
+    padding: 16px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px;
+    
+    font-family: 'Poppins', sans-serif;
+    color: black;
+
+    
+    border-radius: 16px;
+    border: none;
+}
