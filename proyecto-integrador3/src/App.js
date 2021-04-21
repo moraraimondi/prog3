@@ -38,6 +38,14 @@ class App extends Component {
       )
   }
 
+  borrarTarjeta(idItem){
+    console.log("Item a eliminar:" + idItem);
+    let resultado = this.state.items.filter((item)=>{
+      return item.login.uuid!== idItem
+    })
+    this.setState({items: resultado})
+  }
+
 render(){
 
   // let fechaAcortada = items.dob.age;
@@ -74,7 +82,8 @@ render(){
           <div className="tarjetas-container">
             {items.map(item=> (
               
-              <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} fecha={item.dob.date} edad={item.dob.age} foto={item.picture.large}/>
+              <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} fecha={item.dob.date} edad={item.dob.age} foto={item.picture.large} id={item.login.uuid} borrarTarjeta= {this.borrarTarjeta.bind(this)}/>
+
             ))}
           </div>
 

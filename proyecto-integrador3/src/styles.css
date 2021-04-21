@@ -19,6 +19,10 @@ header.header{
     height: 100px;
     display: flex;
     background: #FFF9F8;
+
+    position: fixed;
+    top: 0px;
+    z-index: 1;
 }
 
 div.header-div{
@@ -84,7 +88,7 @@ a.section-a{
 
 /* CONTAINER */
 div.container{
-    margin-top: 100px;
+    padding-top: 200px;
 
     grid-template-columns: 1fr 3fr;
 }

@@ -20,7 +20,7 @@ class Tarjetas extends Component {
             // onMouseOut={this.CambiarColor}
             >  
                 <div className="div-deleteButton">
-                    <button className="deleteButton">
+                    <button className="deleteButton" onClick= {this.props.borrarTarjeta.bind(this,this.props.id)}>
                         X
                     </button>
                 </div>
