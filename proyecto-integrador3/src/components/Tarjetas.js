@@ -19,26 +19,26 @@ class Tarjetas extends Component {
             // onMouseOver = {() => this.CambiarColor("rgb(253, 218, 178)")}
             // onMouseOut={this.CambiarColor}
             >  
-            
+                <div className="div-deleteButton">
+                    <button className="deleteButton">
+                        X
+                    </button>
+                </div>
+
                <ul className="personajes">
-                   <div className="div-fotoPerfil"> 
-                   {/* style={{backgroundImage: "url(" + this.props.foto +")"}} */}
-                        <img className="fotoPerfil" src= {this.props.foto}/>
-                   </div>
-                   <div className="datos-perfil">
-                        <li className="nombre-perfil">{this.props.nombre} {this.props.apellido}</li>
-                        <li> {this.props.edad} Años, <span style={{fontWeight: 200}}>{this.props.fecha.substring(0,10)}</span></li>
-                        <li className="mail-perfil">{this.props.mail}</li>
-                        <div className="div-buttons">
-                            <button className="button-info">
-                                Más info
-                            </button>
-                            <button className="button-borrar">
-                                Borrar
-                            </button>
+                    <a href="">
+                        <div className="div-fotoPerfil"> 
+                    {/* style={{backgroundImage: "url(" + this.props.foto +")"}} */}
+                            <img className="fotoPerfil" src= {this.props.foto}/>
                         </div>
-                        {/* <li><a href="a">Más info</a></li> */}
-                   </div>
+                        <div className="datos-perfil">
+                                <li className="nombre-perfil">{this.props.nombre} {this.props.apellido}</li>
+                                <li className="edad-perfil"> {this.props.edad} Años, <span style={{fontWeight: 200}}>{this.props.fecha.substring(0,10)}</span></li>
+                                <li className="mail-perfil">{this.props.mail}</li>
+                                <p className="p-detalleTarjeta">Hace click en la tarjeta para más detalles </p>
+                                {/* <li><a href="a">Más info</a></li> */}
+                        </div>
+                    </a>
                </ul>
 
                <TarjetasDetalle/>

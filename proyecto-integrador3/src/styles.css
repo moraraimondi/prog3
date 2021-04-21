@@ -1,3 +1,4 @@
+/* BODY Y GENERAL */
 body{
     margin: 0px;
     padding: 0px;
@@ -7,6 +8,11 @@ body{
     background-repeat: no-repeat;
 }
 
+a{
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
 /*$ HEADER */
 header.header{
     width: 100%;
@@ -107,6 +113,29 @@ div.tarjetas{
     margin-bottom: 50px;
 }
 
+div.div-deleteButton{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.deleteButton{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+
+    font-family: 'Poppins', sans-serif;
+    /* background-color: linear-gradient(90deg, #F07D7D 14.53%, rgba(255, 123, 123, 0.97) 88.87%);     */
+    background-color: white;
+    border: none;
+
+    filter: drop-shadow(0px 7.6804px 19.7496px rgba(0, 0, 0, 0.05)) drop-shadow(0px 7.32677px 17.1419px rgba(0, 0, 0, 0.0298054)) drop-shadow(0px 2.51707px 19.2999px rgba(0, 0, 0, 0.0201946));
+
+}
+
 ul.personajes{
     list-style: none;
     padding: 0px;
@@ -143,6 +172,10 @@ li.mail-perfil{
     font-size: 15px;
 }
 
+li.edad-perfil{
+    font-weight: 900;
+}
+
 div.div-buttons{
     display: flex;
     flex-direction: row;
@@ -150,7 +183,7 @@ div.div-buttons{
     justify-content: space-between;
 }
 
-button.button-borrar{
+/* button.button-borrar{
     padding: 16px;
     padding-left: 40px;
     padding-right: 40px;
@@ -176,4 +209,13 @@ button.button-info{
     
     border-radius: 16px;
     border: none;
+} */
+
+p.p-detalleTarjeta{
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.377);
 }
