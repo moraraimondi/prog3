@@ -95,7 +95,7 @@ render(){
       </div>
 
       <footer>
-          {/* <Footer/> */}
+          <Footer/>
       </footer>
     </body>
     )
