@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Tarjetas from './components/Tarjetas';
 import Footer from './components/Footer';
+import AgregarTarjetas from "./components/AgregarTarjetas";
 import React, {Component} from "react";
 
 class App extends Component {
@@ -67,7 +68,13 @@ render(){
         <Header/>
       </header>
 
+      
+
       <div className="container">
+
+      <button>
+        <AgregarTarjetas/>
+      </button>
 
         <div className="left-section">
           <div className="formulario-filtros">
