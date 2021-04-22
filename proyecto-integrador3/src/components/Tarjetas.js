@@ -1,28 +1,16 @@
 import React, {Component} from "react";
-
+import MasInfo from "./MasInfo"
 
 class Tarjetas extends Component {
 
     constructor(props) {
         super(props);
-        this.masInfo = this.masInfo.bind(this)
         this.state = {
           error: null,
           isLoaded: false,
           items: []
         };
       };
-      
-      masInfo(e){
-          //this.detalle.current.style.display= 'block'
-          e.preventDefault();
-          var x = document.getElementById("info");
-          if (x.style.display === "none") {
-              x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-      }
 
     render() {
 
@@ -49,18 +37,10 @@ class Tarjetas extends Component {
                                 <li className="mail-perfil">{this.props.mail}</li>
                                 <p className="p-detalleTarjeta">Hace click en la tarjeta para más detalles </p>
                                 {/* <li><a href="a">Más info</a></li> */}
-                                <button className="masInfo" onClick={this.masInfo}>Más información</button>
                         </div>
                     </a>
-
-                    <div className="detallesInfo"  id="info" ref={this.detalle}>
-                        <li>{this.props.calle}, {this.props.numero}</li>
-                        <li>{this.props.ciudad}, {this.props.estado}</li>
-                        <li>{this.props.cp} {this.props.pais}</li>
-                        <li>Registrado: {this.props.registro.substring(0,10)}</li>
-                        <li>Contacto: {this.props.telefono}</li>
-                    </div>
                </ul>
+               <MasInfo/>
            </div> 
         )
 

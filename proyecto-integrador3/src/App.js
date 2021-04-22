@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Tarjetas from './components/Tarjetas';
 import Footer from './components/Footer';
-import AgregarTarjetas from "./components/AgregarTarjetas";
+// import AgregarTarjetas from "./components/AgregarTarjetas";
 import React, {Component} from "react";
 
 class App extends Component {
@@ -72,9 +72,9 @@ render(){
 
       <div className="container">
 
-      <button>
+      {/* <button>
         <AgregarTarjetas/>
-      </button>
+      </button> */}
 
         <div className="left-section">
           <div className="formulario-filtros">
@@ -91,10 +91,7 @@ render(){
               
               <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} 
               fecha={item.dob.date} edad={item.dob.age} foto={item.picture.large} 
-              id={item.login.uuid} borrarTarjeta= {this.borrarTarjeta.bind(this)} calle={item.location.street.name}
-              numero={item.location.street.number} ciudad={item.location.city} estado={item.location.state}
-              pais={item.location.state} cp={item.location.postcode} registro={item.registered.date}
-              telefono={item.phone}/>
+              id={item.login.uuid} borrarTarjeta= {this.borrarTarjeta.bind(this)}/>
 
             ))}
           </div>
