@@ -1,26 +1,33 @@
-// import React, {Component} from "react";
+import React, {Component} from "react";
 
-// class AgregarTarjetas extends Component {
-//     constructor(props) {
-//          super(props);
-//          this.state = {
-//            error: null,
-//           isLoaded: false,
-//            items: []
-//          };
-//        };
+class AgregarTarjetas extends Component {
 
-//     render(){
-//         addTarjeta(){
-//             fetch("https://randomuser.me/api/")
-//              .then(resource => resource.json())
-//              .then(data => {
-//                  console.log(data)
-//                  this.state.items.push(data.results[0]);
-//                  this.setState({items: this.state.items});
-//              })
-//          }
-//     }
-// }
+    componentDidMount() {
+        fetch("https://randomuser.me/api/?results=12")  
+        .then(res => 
+          res.json())
+        .then(
+          (data) => {
+            console.log(data);
+    
+              this.setState({
+                isLoaded: true,
+                items: data.results,
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+          )
+      }
 
-// export default AgregarTarjetas;
+      addTarjetas() {
+          
+      }
+
+};
+
+export default AgregarTarjetas;
