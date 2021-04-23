@@ -1,8 +1,6 @@
 import Header from './components/Header';
-import Tarjetas from './components/Tarjetas';
 import Footer from './components/Footer';
-// import AgregarTarjetas from "./components/AgregarTarjetas";
-import Filtros from "./components/Filtros"
+import Contenedor from './components/Contenedor';
 import React, {Component} from "react";
 
 class App extends Component {
@@ -18,35 +16,35 @@ class App extends Component {
 
   // Este es el Fetch que me trae los resultados de las tarjetas que se muestran en el inicio
 
-  componentDidMount() {
-    fetch("https://randomuser.me/api/?results=12")  
-    .then(res => 
-      res.json())
-    .then(
-      (data) => {
-        console.log(data);
+  // componentDidMount() {
+  //   fetch("https://randomuser.me/api/?results=12")  
+  //   .then(res => 
+  //     res.json())
+  //   .then(
+  //     (data) => {
+  //       console.log(data);
 
-          this.setState({
-            isLoaded: true,
-            items: data.results,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
+  //         this.setState({
+  //           isLoaded: true,
+  //           items: data.results,
+  //         });
+  //       },
+  //       (error) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           error
+  //         });
+  //       }
+  //     )
+  // }
 
-  borrarTarjeta(idItem){
-    console.log("Item a eliminar:" + idItem);
-    let resultado = this.state.items.filter((item)=>{
-      return item.login.uuid!== idItem
-    })
-    this.setState({items: resultado})
-  }
+  // borrarTarjeta(idItem){
+  //   console.log("Item a eliminar:" + idItem);
+  //   let resultado = this.state.items.filter((item)=>{
+  //     return item.login.uuid!== idItem
+  //   })
+  //   this.setState({items: resultado})
+  // }
 
 render(){
 
@@ -66,34 +64,9 @@ render(){
 
       <div className="container">
 
-      {/* <button>
-        <AgregarTarjetas/>
-      </button> */}
-
-      <div className="left-section">
-        <div className="formulario-filtros">          
-          <Filtros/>
-        </div>
-      </div>
-
         {/* Estas son las tarjetas */}
-        <div className="right-section">
 
-          {/* Contenedor de tarjetas */}
-          <div className="tarjetas-container">
-            {items.map(item=> (
-              
-              <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} 
-              fecha={item.dob.date} edad={item.dob.age} foto={item.picture.large} 
-              id={item.login.uuid} borrarTarjeta= {this.borrarTarjeta.bind(this)}/>
-
-            ))}
-          </div>
-
-          <div className="controller">
-            Aca van los botones
-          </div>
-        </div>
+            <Contenedor/>
 
       </div>
 
