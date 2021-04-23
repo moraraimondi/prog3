@@ -1,7 +1,8 @@
 import Header from './components/Header';
 import Tarjetas from './components/Tarjetas';
 import Footer from './components/Footer';
-import AgregarTarjetas from "./components/AgregarTarjetas";
+// import AgregarTarjetas from "./components/AgregarTarjetas";
+import Filtros from "./components/Filtros"
 import React, {Component} from "react";
 
 class App extends Component {
@@ -49,14 +50,7 @@ class App extends Component {
 
 render(){
 
-  // let fechaAcortada = items.dob.age;
-  // console.log(fechaAcortada)
-
   const {error, isLoaded, items} = this.state;
-
-  // const fecha = items.dob.age;
-
-  // const fechaCorta = fecha.substring(0,10)
 
   if(error){
     return <div> Error: {error.message}</div>;
@@ -72,15 +66,15 @@ render(){
 
       <div className="container">
 
-      <button>
+      {/* <button>
         <AgregarTarjetas/>
-      </button>
+      </button> */}
 
-        <div className="left-section">
-          <div className="formulario-filtros">
-          {/* Acá va el formulario para filtrar */}
+      <div className="left-section">
+        <div className="formulario-filtros">          
+          <Filtros/>
         </div>
-        </div>
+      </div>
 
         {/* Estas son las tarjetas */}
         <div className="right-section">
