@@ -3,9 +3,9 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
-    height: 100vh;
+    height: 100%;
 
-    background: linear-gradient(180deg, rgba(117, 200, 204, 0.22) 0%, rgba(209, 235, 236, 0.22) 74.38%);
+    /* background: linear-gradient(180deg, rgba(117, 200, 204, 0.22) 0%, rgba(209, 235, 236, 0.22) 74.38%); */
     background-repeat: no-repeat;
 }
 
@@ -95,7 +95,6 @@ a.section-a{
 
 /* CONTAINER */
 div.main-container{
-    height: 100vh;
 }
 
 div.container{
@@ -104,7 +103,8 @@ div.container{
 
     width: 100vw;
     padding-top: 100px;
-    height: 100vh;
+    background: linear-gradient(180deg, rgba(117, 200, 204, 0.22) 0%, rgba(209, 235, 236, 0.22) 74.38%);
+
 }
 
 /* Left Section */
