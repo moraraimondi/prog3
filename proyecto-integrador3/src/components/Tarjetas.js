@@ -28,14 +28,12 @@ class Tarjetas extends Component {
                <ul className="personajes">
                     <a href="">
                         <div className="div-fotoPerfil"> 
-                    {/* style={{backgroundImage: "url(" + this.props.foto +")"}} */}
                             <img className="fotoPerfil" src= {this.props.foto}/>
                         </div>
                         <div className="datos-perfil">
                                 <li className="nombre-perfil">{this.props.nombre} {this.props.apellido}</li>
                                 <li className="edad-perfil"> {this.props.edad} Años, <span style={{fontWeight: 200}}>{this.props.fecha.substring(0,10)}</span></li>
                                 <li className="mail-perfil">{this.props.mail}</li>
-                                {/* <li><a href="a">Más info</a></li> */}
                         </div>
                     </a>
                </ul>

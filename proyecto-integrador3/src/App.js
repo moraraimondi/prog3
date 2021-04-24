@@ -14,69 +14,34 @@ class App extends Component {
     };
   }
 
-  // Este es el Fetch que me trae los resultados de las tarjetas que se muestran en el inicio
+  render(){
 
-  // componentDidMount() {
-  //   fetch("https://randomuser.me/api/?results=12")  
-  //   .then(res => 
-  //     res.json())
-  //   .then(
-  //     (data) => {
-  //       console.log(data);
+    const {error, isLoaded, items} = this.state;
 
-  //         this.setState({
-  //           isLoaded: true,
-  //           items: data.results,
-  //         });
-  //       },
-  //       (error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error
-  //         });
-  //       }
-  //     )
-  // }
+    if(error){
+      return <div> Error: {error.message}</div>;
+    } else {
+      return (
 
-  // borrarTarjeta(idItem){
-  //   console.log("Item a eliminar:" + idItem);
-  //   let resultado = this.state.items.filter((item)=>{
-  //     return item.login.uuid!== idItem
-  //   })
-  //   this.setState({items: resultado})
-  // }
+        <body>
+          <header className="header">
+            <Header/>
+          </header>
+          
+          <div className="main-container">
+              <div className="container">
+                {/* Estas son las tarjetas */}
+                    <Contenedor/>
+              </div>
 
-render(){
-
-  const {error, isLoaded, items} = this.state;
-
-  if(error){
-    return <div> Error: {error.message}</div>;
-  } else {
-    return (
-
-      <body>
-      <header className="header">
-        <Header/>
-      </header>
-
-      
-
-      <div className="container">
-
-        {/* Estas son las tarjetas */}
-
-            <Contenedor/>
-
-      </div>
-
-      <footer>
-          <Footer/>
-      </footer>
-    </body>
-    )
+              <footer>
+                  <Footer/>
+              </footer>
+          </div>
+        </body>
+      )
+    }
   }
-}
 }
   
 

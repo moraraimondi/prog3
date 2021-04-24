@@ -45,7 +45,7 @@ class MasInfo extends Component{
         const {error, isLoaded, items} = this.state;
         return (
             <div className="App">
-                 <button onClick = { this.changeColor }>Más información</button>
+                 <button className="boton" onClick = { this.changeColor }>Más información</button>
                  {items.map(item=> (
                     <div ref = { this.title } style={{display: 'none'}}>
                         <li>{item.location.street.name}, {item.location.street.number}</li>

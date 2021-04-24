@@ -3,6 +3,7 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
+    height: 100vh;
 
     background: linear-gradient(180deg, rgba(117, 200, 204, 0.22) 0%, rgba(209, 235, 236, 0.22) 74.38%);
     background-repeat: no-repeat;
@@ -13,9 +14,15 @@ a{
     color: black;
     text-decoration: none;
 }
+
+p{
+    font-size: 10px;
+}
+
+
 /*$ HEADER */
 header.header{
-    width: 100%;
+    width: 100vw;
     height: 100px;
     display: flex;
     background: #FFF9F8;
@@ -87,15 +94,102 @@ a.section-a{
 }
 
 /* CONTAINER */
-div.container{
-    padding-top: 200px;
-
-    grid-template-columns: 1fr 3fr;
+div.main-container{
+    height: 100vh;
 }
 
+div.container{
+    display: flex;
+    flex-direction: row;
+
+    width: 100vw;
+    padding-top: 100px;
+    height: 100vh;
+}
+
+/* Left Section */
+div.left-section{
+    width: 30%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+div.opciones{
+    background: #FFF9F8;
+    border-radius: 20px;
+    width: 300px;
+
+    padding: 30px;
+    position: fixed;
+
+}
+
+div.filtros-div{
+    display: flex;
+    flex-direction: column;
+}
+
+h2.filtros-title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 60px;
+
+    margin: 0px;
+
+    color: #424242;
+}
+
+div.div-botones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+}
+
+.boton{
+    background: linear-gradient(90deg, #669EBD 14.53%, rgba(86, 143, 197, 0.97) 88.87%);
+    border-radius: 16px;
+    border: none;
+    color: white;
+    font-family: Poppins;
+    font-weight: 600;
+    margin-top: 10px;
+
+    
+    width: 100%;
+    height: 40px;   
+}
+
+button.boton-secundario{
+    background: linear-gradient(90deg, #BBB9B9 14.53%, rgba(177, 177, 177, 0.97) 88.87%);
+}
+
+button.boton-agregar{
+    background: linear-gradient(90deg, #F07D7D 14.53%, rgba(255, 123, 123, 0.97) 88.87%);
+}
+
+
+select#selectDataFiltro{
+    font-family: Poppins;
+    margin-bottom: 10px;
+    background: #FFFFFF;
+
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+input#inputDataFiltro{
+    background: #FFFFFF;
+
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
 /* Right Section */
 div.right-section{
-    margin-left: 200px;
+    width: 70%;
 }
 
 /* Tarjetas */
@@ -106,10 +200,11 @@ div.detallesInfo{
 div.tarjetas-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    column-gap: 0px;
 }
 
 div.tarjetas{
-    width: 300px;
+    width: 200px;
     height: auto;
     padding: 16px;
 
@@ -162,8 +257,8 @@ div.datos-perfil{
 } */
 
 img.fotoPerfil{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
 
     border-radius: 20px;
 }
@@ -177,7 +272,7 @@ li.nombre-perfil{
 
 li.mail-perfil{
     font-weight: 200;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 li.edad-perfil{
@@ -226,4 +321,20 @@ p.p-detalleTarjeta{
 
     margin-top: 20px;
     color: rgba(0, 0, 0, 0.377);
+}
+
+/* FOOTER */
+
+div.footer-div{
+    width: 100vw;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+    
+    background: #FFF9F8;
+
+    padding-left: 200px;
+    padding-right: 200px;
 }
