@@ -9,7 +9,9 @@ class Footer extends Component {
                 <div className="section-div">
                     
                         <p>Tomas Giampaoletti</p>
+                        
                         <p>Lola Marotta</p>
+                
                         <p>Mora Raimondi</p>
                     
                 </div>

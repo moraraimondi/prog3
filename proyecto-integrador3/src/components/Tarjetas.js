@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import MasInfo from "./MasInfo"
+import MasInfo from "./MasInfo";
 
 class Tarjetas extends Component {
 
@@ -15,7 +15,7 @@ class Tarjetas extends Component {
     render() {
 
         return(
-            <div className="tarjetas" style={{backgroundColor: this.state.color}}
+            <div className="tarjetas" style={{backgroundColor: this.state.color, width: this.props.size}}
             // onMouseOver = {() => this.CambiarColor("rgb(253, 218, 178)")}
             // onMouseOut={this.CambiarColor}
             >  

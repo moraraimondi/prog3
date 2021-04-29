@@ -198,13 +198,13 @@ div.detallesInfo{
     display: none;
 }
 div.tarjetas-container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 div.tarjetas{
-    width: 200px;
+    width: auto;
     height: auto;
     padding: 16px;
 

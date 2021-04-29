@@ -10,11 +10,13 @@
             error: null,
             isLoaded: false,
             numero: "",
-            items: []
-          };
-        }
+            items: [],
+            sizeOriginal: '20%',
+            sizeNuevo: '20%',
+            size: '30%',
+        }}
         
-        componentDidMount() {
+        componentDidMount(){
           fetch("https://randomuser.me/api/?results=12")  
           .then(res => 
             res.json())
@@ -38,6 +40,21 @@
             )
         }
         
+        
+         cambiarVistas(){
+           let botonSeleccionado = document.querySelector("button.cambiar-vistas").value;
+           console.log(botonSeleccionado);
+
+            if(this.state.size === this.state.sizeOriginal){
+              console.log(this.state.sizeOriginal);
+              this.setState({size: this.state.sizeNuevo})
+            } else {
+              this.setState({size: this.state.sizeOriginal})
+              console.log(this.state.size);
+            }
+         }
+
+
         filtrarTarjetas(){
           let dataAfiltrar = document.getElementById("inputDataFiltro").value
           let campoAfiltrar = document.getElementById("selectDataFiltro").value
@@ -97,6 +114,7 @@
         })
       }
 
+
       render(){
           const {error, isLoaded, items} = this.state;
 
@@ -105,6 +123,13 @@
     } else {
       return (
 
+        <div className="super-container">
+
+            <div className="cambiar-vistas-container">  
+                <button className="boton cambiar-vistas" value="2" onClick={this.cambiarVistas.bind(this)}>Ver de a 2</button>
+              </div>
+
+          
           <div className="container">
 
               {/*SECCIÓN IZQUIERDA*/}
@@ -150,6 +175,8 @@
                 
               </div>
 
+             
+
               {/*SECCIÓN DERECHA */}
 
               <div className="right-section">
@@ -157,8 +184,10 @@
                   {/* Contenedor de tarjetas */}
                   <div className="tarjetas-container">
                       {items.map(item=> (
-                      
-                      <Tarjetas nombre={item.name.first} apellido={item.name.last} mail={item.email} 
+                    
+                      <Tarjetas 
+                      size={this.state.size}
+                      nombre={item.name.first} apellido={item.name.last} mail={item.email} 
                       fecha={item.dob.date} edad={item.dob.age} foto={item.picture.large} 
                       id={item.login.uuid} borrarTarjeta= {this.borrarTarjeta.bind(this)}/>
 
@@ -167,6 +196,8 @@
               <div/>
           </div>
           </div>
+
+        </div>
       )
       }
   }}
