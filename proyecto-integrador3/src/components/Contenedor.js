@@ -61,6 +61,11 @@
               return item.gender === dataAfiltrar
             })  
             this.setState({items:resultado})
+          } else if (campoAfiltrar === "Apellido"){
+            let resultado = this.state.items.filter( (item) => {
+              return item.name.last.includes(dataAfiltrar)
+            })
+            this.setState({items: resultado})
           }
         }
 
@@ -117,6 +122,7 @@
                     <label style={{fontWeight:"600", color:"424242"}}>Filtrar por</label>
                     <select id="selectDataFiltro">
                       <option>Nombre</option>
+                      <option>Apellido</option>
                       <option>Edad</option>
                       <option>Sexo</option>
                     </select>
