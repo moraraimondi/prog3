@@ -11,7 +11,7 @@
             isLoaded: false,
             numero: "",
             items: [],
-            sizeOriginal: '20%',
+            sizeGrande: '30%',
             sizeNuevo: '20%',
             size: '30%',
         }}
@@ -45,11 +45,12 @@
            let botonSeleccionado = document.querySelector("button.cambiar-vistas").value;
            console.log(botonSeleccionado);
 
-            if(this.state.size === this.state.sizeOriginal){
-              console.log(this.state.sizeOriginal);
+            if(this.state.size === this.state.sizeGrande){
+              //compara el tamaño actual con el tamaño original
+              console.log(this.state.sizeGrande);
               this.setState({size: this.state.sizeNuevo})
             } else {
-              this.setState({size: this.state.sizeOriginal})
+              this.setState({size: this.state.sizeGrande})
               console.log(this.state.size);
             }
          }
@@ -126,7 +127,7 @@
         <div className="super-container">
 
             <div className="cambiar-vistas-container">  
-                <button className="boton cambiar-vistas" value="2" onClick={this.cambiarVistas.bind(this)}>Ver de a 2</button>
+                <button className="boton cambiar-vistas" value="2" onClick={this.cambiarVistas.bind(this)}>Ver de a 4</button>
               </div>
 
           
