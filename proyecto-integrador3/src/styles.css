@@ -323,6 +323,16 @@ p.p-detalleTarjeta{
     color: rgba(0, 0, 0, 0.377);
 }
 
+ul.mas-info{
+    list-style: none;
+    padding-right: 0px;
+    padding-inline-start: 10px;
+    text-align: center;
+}
+
+li.dettalle{
+    padding-right: 0px;
+}
 /* FOOTER */
 
 div.footer-div{

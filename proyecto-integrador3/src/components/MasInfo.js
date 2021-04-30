@@ -48,11 +48,13 @@ class MasInfo extends Component{
                  <button className="boton" onClick = { this.changeColor }>Más información</button>
                  {items.map(item=> (
                     <div ref = { this.title } style={{display: 'none'}}>
-                        <li>{item.location.street.name}, {item.location.street.number}</li>
-                        <li>{item.location.city}, {item.location.state}</li>
-                        <li>{item.location.postcode} {item.location.country}</li>
-                        <li>Registrado: {item.registered.date.substring(0,10)}</li>
-                        <li>Contacto: {item.phone}</li>
+                      <ul className="mas-info">
+                        <li className='detalle'> <strong>Contacto: </strong>{item.phone}</li>
+                        <li className='detalle'> <strong>Ciudad: </strong>{item.location.city}, {item.location.state}</li>
+                        <li className='detalle'> <strong>Codigo Postal: </strong>{item.location.postcode}</li>
+                        <li className='detalle'> <strong>País:  </strong>{item.location.country}</li>
+                        <li className='detalle'> <strong>Registrado: </strong>{item.registered.date.substring(0,10)}</li>
+                        </ul>
                     </div>
                  ))}
             </div>
