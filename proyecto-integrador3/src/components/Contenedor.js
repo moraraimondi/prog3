@@ -39,6 +39,24 @@
               }
             )
         }
+
+        ordenarAscendente (){
+          this.state.items.sort((a,b) => a.name.first.localeCompare(b.name.first))
+          this.setState({
+            items: this.state.items.sort(function(a,b) {
+              return a.name.first > b.name.first
+            })
+          })
+        }
+
+        ordenarDescendente (){
+          this.state.items.sort((a,b) => b.name.first.localeCompare(a.name.first))
+          this.setState({
+            items: this.state.items.sort(function (a,b) {
+              return b.name.first > a.name.first
+            })
+          })
+        }
         
         
          cambiarVistas(){
@@ -162,10 +180,15 @@
 
                   </div>
 
+                  <div className="ordenar">
+                    <button className="boton boton-ordenar" onClick={this.ordenarAscendente.bind(this)}> Ascendente</button>
+                    <button className="boton boton-ordenar" onClick={this.ordenarDescendente.bind(this)}> Descendente</button>
+                  </div>
+
                   {/* AGREGAR TARJETAS */}
 
                   <div className="formulario-agregar">
-                      <button className="boton boton-agregar" onClick={this.abrirFormulario.bind(this)}>Agregar tarjetas</button>
+                      <button className="boton boton-agregar" onClick={this.agregarTarjetas.bind(this)}>Agregar tarjetas</button>
                       <div id="formulario" style={{display:"none"}}>
                         <p>¿Cuántas tarjetas queres agregar?</p>
                         <input type="number" onChange={(event) => this.setState({numero: event.target.value})}></input>
