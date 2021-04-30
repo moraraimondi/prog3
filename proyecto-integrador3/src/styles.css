@@ -19,11 +19,17 @@ p{
     font-size: 10px;
 }
 
+i.icono{
+    color: #424242;
+    font-size: 30px;
+    border: none;
+}
+
 
 /*$ HEADER */
 header.header{
     width: 100vw;
-    height: 100px;
+    height: 80px;
     display: flex;
     background: #FFF9F8;
 
@@ -34,7 +40,7 @@ header.header{
 
 div.header-div{
     width: 100vw;
-    height: 100px;
+    height: 80px;
 
     display: flex;
     flex-direction: row;
@@ -94,7 +100,69 @@ a.section-a{
 }
 
 /* CONTAINER */
-div.main-container{
+
+div.super-container{
+    background: linear-gradient(180deg, rgba(117, 200, 204, 0.22) 0%, rgba(209, 235, 236, 0.22) 74.38%);
+    padding-top: 80px;
+}
+
+div.panel-superior-div{
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    filter: drop-shadow(0px 2.51707px 19.2999px rgba(0, 0, 0, 0.0201946));
+}
+
+div.panel-superior{
+    background: #FFF9F8;
+    border-radius: 20px;
+
+    width: 100%;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+div.vistas-title-div{
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    color: #424242;
+}
+
+div.vistas-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+h3.vistas-title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+
+    margin-right: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+    color: #
+    ;
+}
+
+div.ordenar-container{
+    display: flex;
+    justify-content: space-between;
 }
 
 div.container{
@@ -102,9 +170,6 @@ div.container{
     flex-direction: row;
 
     width: 100vw;
-    padding-top: 100px;
-    background: linear-gradient(180deg, rgba(117, 200, 204, 0.22) 0%, rgba(209, 235, 236, 0.22) 74.38%);
-
 }
 
 /* Left Section */
@@ -127,6 +192,14 @@ div.opciones{
 div.filtros-div{
     display: flex;
     flex-direction: column;
+    
+    margin-bottom: 20px;
+}
+
+div.div-campos-filtro{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 h2.filtros-title{
@@ -163,14 +236,43 @@ div.div-botones{
 
 button.boton-secundario{
     background: linear-gradient(90deg, #BBB9B9 14.53%, rgba(177, 177, 177, 0.97) 88.87%);
+    
 }
 
 button.boton-agregar{
     background: linear-gradient(90deg, #F07D7D 14.53%, rgba(255, 123, 123, 0.97) 88.87%);
 }
 
-button.boton-ordenar{
+button.boton-agregar2{
+    background: #EBEBEB;
+    color: #424242;
+}
+
+button.boton-superior{
+    background: #FFF9F8;    border-radius: 16px;
+    border: 1px solid #424242;
+    color: #424242;
+    font-family: Poppins;
+    font-weight: 600;
     
+    width: 150px;
+    height: 40px;  
+    margin-right: 20px;
+}
+
+.boton-ordenar{
+    background: #FFF9F8;
+    border-radius: 100%;
+    border: 1px solid #424242;
+    color: white;
+    font-family: Poppins;
+    font-weight: 600;
+    padding: 10px;
+    
+    width: auto;
+    height: 50px;   
+
+    margin-right: 10px;
 }
 
 
@@ -182,14 +284,38 @@ select#selectDataFiltro{
     border: 1px solid #DADADA;
     box-sizing: border-box;
     border-radius: 5px;
+
+    margin-bottom: 0px;
 }
 
-input#inputDataFiltro{
+input.input{
     background: #FFFFFF;
 
     border: 1px solid #DADADA;
     box-sizing: border-box;
     border-radius: 5px;
+
+    flex: 1;
+    margin-left: 10px;
+}
+
+input.input-agregar{
+    background: #FFFFFF;
+
+    border: 1px solid #DADADA;
+    border-radius: 5px;
+
+    width: 20%;
+}
+
+div.agregar-detalle{
+    display: flex;
+    margin-top: 20px;
+}
+
+p.detalle-p{
+    flex: 1;
+    font-size: 12px;
 }
 /* Right Section */
 div.right-section{
@@ -340,15 +466,22 @@ li.dettalle{
 /* FOOTER */
 
 div.footer-div{
-    width: 100vw;
     height: 100px;
 
     display: flex;
     flex-direction: row;
-    justify-content:space-between ;
+    justify-content:center;
     
     background: #FFF9F8;
 
     padding-left: 200px;
     padding-right: 200px;
+}
+
+.detalle-footer{
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 20px;
+
+    margin-left: 40px;
 }

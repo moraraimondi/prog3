@@ -14,8 +14,6 @@ class Header extends Component {
                 <div className="section-div">
                     <ul className="section-list">
                         <HeaderItem seccion="Inicio"/>
-                        <HeaderItem seccion="Matches"/>
-                        <HeaderItem seccion="Sobre Nosotros"/>
                     </ul>
                 </div>
 

@@ -10,10 +10,12 @@
             error: null,
             isLoaded: false,
             numero: "",
+            itemsOriginal:[],
             items: [],
             sizeGrande: '30%',
-            sizeNuevo: '20%',
             size: '30%',
+            sizeCuatro: '20%',
+            sizeTres: '25%',
         }}
         
         componentDidMount(){
@@ -27,6 +29,7 @@
                 this.setState({
                   isLoaded: true,
                   items: data.results,
+                  itemsOriginal: data.results,
                 });
 
 
@@ -59,49 +62,91 @@
         }
         
         
-         cambiarVistas(){
+         cuatroTarjetas(){
            let botonSeleccionado = document.querySelector("button.cambiar-vistas").value;
            console.log(botonSeleccionado);
 
             if(this.state.size === this.state.sizeGrande){
               //compara el tamaño actual con el tamaño original
               console.log(this.state.sizeGrande);
-              this.setState({size: this.state.sizeNuevo})
+              this.setState({size: this.state.sizeCuatro})
             } else {
               this.setState({size: this.state.sizeGrande})
               console.log(this.state.size);
             }
          }
 
+         tresTarjetas(){
+          let botonSeleccionado = document.querySelector("button.cambiar-vistas").value;
+          console.log(botonSeleccionado);
+
+           if(this.state.size === this.state.sizeGrande){
+             //compara el tamaño actual con el tamaño original
+             console.log(this.state.sizeGrande);
+             this.setState({size: this.state.sizeTres})
+           } else {
+             this.setState({size: this.state.sizeGrande})
+             console.log(this.state.size);
+           }
+         }
+
+        restablecerVista(){
+          if(this.state.size === this.state.sizeGrande){
+            //compara el tamaño actual con el tamaño original
+            console.log(this.state.sizeGrande);
+            this.setState({size: this.state.sizeGrande})
+          } else {
+            this.setState({size: this.state.sizeGrande})
+            console.log(this.state.size);
+          }         
+        }
+
+        restablecerTarjetas(){
+          this.setState({items: this.state.itemsOriginal})
+        }
+
 
         filtrarTarjetas(){
-          let dataAfiltrar = document.getElementById("inputDataFiltro").value
-          let campoAfiltrar = document.getElementById("selectDataFiltro").value
+          let dataAfiltrar = document.querySelector(".inputDataFiltro").value
+          let campoAfiltrar = document.querySelector(".selectDataFiltro").value
 
           console.log(dataAfiltrar)
           console.log(campoAfiltrar)
 
 
-          if (campoAfiltrar === "Edad"){
-            let resultado = this.state.items.filter( (item) => {
-              return item.dob.age == dataAfiltrar 
-            }) 
-            this.setState({items: resultado})
-          } else if (campoAfiltrar === "Nombre"){
-            let resultado = this.state.items.filter( (item) => {
-              return item.name.first.includes(dataAfiltrar)
-            })
-            this.setState({items: resultado})
-          } else if (campoAfiltrar === "Sexo"){
-            let resultado = this.state.items.filter( (item) => {
-              return item.gender === dataAfiltrar
-            })  
-            this.setState({items:resultado})
-          } else if (campoAfiltrar === "Apellido"){
-            let resultado = this.state.items.filter( (item) => {
-              return item.name.last.includes(dataAfiltrar)
-            })
-            this.setState({items: resultado})
+          if(dataAfiltrar != ""){
+            if (campoAfiltrar === "Edad"){
+              let resultado = this.state.items.filter( (item) => {
+                return item.dob.age == dataAfiltrar 
+              }) 
+              this.setState({items: resultado})
+            } else if (campoAfiltrar === "Nombre"){
+              let dataAfiltrarMayuscula = dataAfiltrar.toUpperCase()
+
+              let resultado = this.state.items.filter( (item) => {
+                let dataMayuscula = item.name.first.toUpperCase()
+                return dataMayuscula.includes(dataAfiltrarMayuscula)
+              })
+              this.setState({items: resultado})
+            } else if (campoAfiltrar === "Sexo"){
+              let dataSexo = dataAfiltrar.replace("hombre","male").replace("mujer","female")
+
+              let resultado = this.state.items.filter( (item) => {
+                
+                return item.gender === dataSexo
+              })  
+              this.setState({items:resultado})
+            } else if (campoAfiltrar === "Apellido"){
+              let dataAfiltrarMayuscula = dataAfiltrar.toUpperCase()
+
+              let resultado = this.state.items.filter( (item) => {
+                let dataMayuscula = item.name.last.toUpperCase()
+                return dataMayuscula.includes(dataAfiltrarMayuscula)
+              })
+              this.setState({items: resultado})
+            }
+          } else {
+            this.setState({items: this.state.itemsOriginal})
           }
         }
 
@@ -141,14 +186,31 @@
       return <div> Error: {error.message}</div>;
     } else {
       return (
-
         <div className="super-container">
 
-            <div className="cambiar-vistas-container">  
-                <button className="boton cambiar-vistas" value="2" onClick={this.cambiarVistas.bind(this)}>Ver de a 4</button>
+          <div className="panel-superior-div">
+
+            <div className="panel-superior">
+              <div className="vistas-container">
+                <div className="vistas-title-div">
+                  <h3 className="vistas-title">Vista Tarjetas</h3>
+                </div>
+                <button className="boton-superior cambiar-vistas" value="3" onClick={this.restablecerVista.bind(this)}>2 por fila</button>
+                <button className="boton-superior cambiar-vistas" value="3" onClick={this.tresTarjetas.bind(this)}>3 por fila</button>
+                <button className="boton-superior cambiar-vistas" value="4" onClick={this.cuatroTarjetas.bind(this)}>4 por fila</button>
               </div>
 
-          
+              <div className="ordenar-container">
+                <div className="vistas-title-div">
+                  <h3 className="vistas-title">Ordenar Nombres</h3>
+                </div>
+                <button className="boton-ordenar" onClick={this.ordenarAscendente.bind(this)}><i className="icono fas fa-sort-alpha-down"></i></button>
+                <button className="boton-ordenar" onClick={this.ordenarDescendente.bind(this)}><i className="icono fas fa-sort-alpha-up"></i></button>
+              </div>
+            </div>
+
+          </div>
+
           <div className="container">
 
               {/*SECCIÓN IZQUIERDA*/}
@@ -162,37 +224,37 @@
                   <div className="filtros-div">
 
                     <h2 className="filtros-title">Filtros</h2>
-                    
+
                     <label style={{fontWeight:"600", color:"424242"}}>Filtrar por</label>
-                    <select id="selectDataFiltro">
-                      <option>Nombre</option>
-                      <option>Apellido</option>
-                      <option>Edad</option>
-                      <option>Sexo</option>
-                    </select>
+                    <div className="div-campos-filtro">
+                      <select className="selectDataFiltro" name="selectDataFiltro" id="selectDataFiltro">
+                        <option>Nombre</option>
+                        <option>Apellido</option>
+                        <option>Edad</option>
+                        <option>Sexo</option>
+                      </select>
 
-                    <input className="inputDataFiltro" name="filtroData" id="inputDataFiltro"/>
-
+                      <input className="inputDataFiltro input" name="filtroData" id="inputDataFiltro"/>
+                    </div>
+                    
                     <div className="div-botones">
                       <button className="boton" onClick={this.filtrarTarjetas.bind(this)}>Filtrar</button>
-                      <button className="boton-secundario boton"onClick={this.componentDidMount.bind(this)}>Reset</button>
+                      <button className="boton-secundario boton" onClick={this.restablecerTarjetas.bind(this)}>Reset</button>
+                    
                     </div>
 
-                  </div>
-
-                  <div className="ordenar">
-                    <button className="boton boton-ordenar" onClick={this.ordenarAscendente.bind(this)}> Ascendente</button>
-                    <button className="boton boton-ordenar" onClick={this.ordenarDescendente.bind(this)}> Descendente</button>
                   </div>
 
                   {/* AGREGAR TARJETAS */}
 
                   <div className="formulario-agregar">
-                      <button className="boton boton-agregar" onClick={this.agregarTarjetas.bind(this)}>Agregar tarjetas</button>
+                      <button className="boton boton-agregar2" onClick={this.abrirFormulario.bind(this)}>Agregar tarjetas</button>
                       <div id="formulario" style={{display:"none"}}>
-                        <p>¿Cuántas tarjetas queres agregar?</p>
-                        <input type="number" onChange={(event) => this.setState({numero: event.target.value})}></input>
-                        <button className="boton" onClick={this.agregarTarjetas.bind(this)}> Agregar </button>  
+                        <div className="agregar-detalle">
+                          <p className="detalle-p">¿Cuántas tarjetas queres agregar?</p>
+                          <input className="input-agregar" type="number" onChange={(event) => this.setState({numero: event.target.value})}></input>
+                        </div>
+                        <button className="boton boton-agregar" onClick={this.agregarTarjetas.bind(this)}> Agregar </button>  
                       </div>
                   </div>
                 </div>
@@ -220,7 +282,6 @@
               <div/>
           </div>
           </div>
-
         </div>
       )
       }
