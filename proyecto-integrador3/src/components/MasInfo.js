@@ -3,21 +3,21 @@ import React, { Component } from 'react';
 class MasInfo extends Component{
     constructor() {
         super()
-        this.title = React.createRef()
-        this.changeColor = this.changeColor.bind( this )
+        this.div = React.createRef()
+        this.masInfo = this.masInfo.bind( this )
         this.state = {
             error: null,
             isLoaded: false,
             items: []
           };
     }
-    changeColor() {
-        console.log(this.title)
-        // this.title.current.style.display = 'block'
-        if(this.title.current.style.display === "none"){
-            this.title.current.style.display = "block";
+    masInfo() {
+        console.log(this.div)
+        // this.div.current.style.display = 'block'
+        if(this.div.current.style.display === "none"){
+            this.div.current.style.display = "block";
         } else{
-            this.title.current.style.display = "none";
+            this.div.current.style.display = "none";
         }
     }
     componentDidMount() {
@@ -45,9 +45,9 @@ class MasInfo extends Component{
         const {error, isLoaded, items} = this.state;
         return (
             <div className="App">
-                 <button className="boton" onClick = { this.changeColor }>Más información</button>
+                 <button className="boton" onClick = { this.masInfo }>Más información</button>
                  {items.map(item=> (
-                    <div ref = { this.title } style={{display: 'none'}}>
+                    <div ref = { this.div } style={{display: 'none'}}>
                       <ul className="mas-info">
                         <li className='detalle'> <strong>Contacto: </strong>{item.phone}</li>
                         <li className='detalle'> <strong>Ciudad: </strong>{item.location.city}, {item.location.state}</li>
