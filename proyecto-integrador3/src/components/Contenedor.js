@@ -12,7 +12,7 @@
             numero: "",
             itemsOriginal:[],
             items: [],
-            sizeGrande: '30%',
+            sizeOriginal: '30%',
             size: '30%',
             sizeCuatro: '20%',
             sizeTres: '25%',
@@ -66,12 +66,14 @@
            let botonSeleccionado = document.querySelector("button.cambiar-vistas").value;
            console.log(botonSeleccionado);
 
-            if(this.state.size === this.state.sizeGrande){
+            if(this.state.size === this.state.sizeOriginal){
               //compara el tamaño actual con el tamaño original
-              console.log(this.state.sizeGrande);
+              console.log(this.state.sizeOriginal);
               this.setState({size: this.state.sizeCuatro})
+            } else if (this.state.size === this.state.sizeTres){
+              this.setState({size:this.state.sizeCuatro})
             } else {
-              this.setState({size: this.state.sizeGrande})
+              this.setState({size: this.state.sizeOriginal})
               console.log(this.state.size);
             }
          }
@@ -80,23 +82,25 @@
           let botonSeleccionado = document.querySelector("button.cambiar-vistas").value;
           console.log(botonSeleccionado);
 
-           if(this.state.size === this.state.sizeGrande){
+           if(this.state.size === this.state.sizeOriginal){
              //compara el tamaño actual con el tamaño original
-             console.log(this.state.sizeGrande);
+             console.log(this.state.sizeOriginal);
+             this.setState({size: this.state.sizeTres})
+           } else if (this.state.size === this.state.sizeCuatro){
              this.setState({size: this.state.sizeTres})
            } else {
-             this.setState({size: this.state.sizeGrande})
+             this.setState({size: this.state.sizeOriginal})
              console.log(this.state.size);
            }
          }
 
         restablecerVista(){
-          if(this.state.size === this.state.sizeGrande){
+          if(this.state.size === this.state.sizeOriginal){
             //compara el tamaño actual con el tamaño original
-            console.log(this.state.sizeGrande);
-            this.setState({size: this.state.sizeGrande})
+            console.log(this.state.sizeOriginal);
+            this.setState({size: this.state.sizeOriginal})
           } else {
-            this.setState({size: this.state.sizeGrande})
+            this.setState({size: this.state.sizeOriginal})
             console.log(this.state.size);
           }         
         }
@@ -130,9 +134,7 @@
               this.setState({items: resultado})
             } else if (campoAfiltrar === "Sexo"){
               let dataSexo = dataAfiltrar.replace("hombre","male").replace("mujer","female")
-
               let resultado = this.state.items.filter( (item) => {
-                
                 return item.gender === dataSexo
               })  
               this.setState({items:resultado})
